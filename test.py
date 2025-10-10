@@ -1,1 +1,2 @@
-print("hello world")
+print("hej hej")
+print ('Hej från Shara')
