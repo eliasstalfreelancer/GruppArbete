@@ -16,4 +16,4 @@ class ReveuneAnylist:
     
 
 
-print(ReveuneAnylist("data/ecommerce_sales.csv").dict_contents_list)
+#print(ReveuneAnylist("data/ecommerce_sales.csv").dict_contents_list)
