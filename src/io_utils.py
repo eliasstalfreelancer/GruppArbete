@@ -23,4 +23,3 @@ def clean_data(df):
     df_clean["category"] = df_clean["category"].astype("category")
     return df_clean
 
-print("hello")
