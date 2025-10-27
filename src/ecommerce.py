@@ -7,25 +7,28 @@ import pandas as pd
 
 def amount_of_orders(df):
     
-    amount_of_orders = df.groupby("city",observed=False)["revenue"].count()
-    amount_of_orders_df = pd.DataFrame(amount_of_orders)
-    amount_of_orders_df = amount_of_orders_df.rename(columns={"revenue": "Amount of orders"})
-    return amount_of_orders_df
+    amount_of_orders = len(df) 
 
-def totel_index_from_difrent_cuntries(df,index):
-    sum = df.groupby("city").agg(index_sum = (index,"sum")).sort_values("index_sum",ascending=False)
+    return amount_of_orders
+
+
+def total_index(df,index):
+    sum = df[index].sum()
+    rounded_sum = sum.round(2)
         
-    return sum
+    return rounded_sum
 
 def average_vaule_order(df):
+    revenue = total_index(df,"revenue")
+    orders = amount_of_orders(df)
+    aov = revenue/orders
+    rounded_aov = aov.round(2)
+    
+    return rounded_aov  
+  
         
-    avo = df.groupby("city",observed=False)["revenue"].mean()
-    avo_df = pd.DataFrame(avo)
-    avo_df = avo_df.round(2)
-    avo_df = avo_df.rename(columns={"revenue": "AVO"})
         
-        
-    return avo_df
+   
 
     
 
