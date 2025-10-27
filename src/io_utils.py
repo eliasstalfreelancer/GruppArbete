@@ -22,3 +22,4 @@ def clean_data(df):
     df_clean["city"] = df_clean["city"].astype("category")
     df_clean["category"] = df_clean["category"].astype("category")
     return df_clean
+
