@@ -6,19 +6,19 @@ import pandas as pd
 import src.metrics as metrics
 
 class DataProccesing:
-    def __init__(self,path):
-        data = io_utils.load_data(path)
-        clean_data = io_utils.clean_data(data)
-        clean_data_df = pd.DataFrame(clean_data)
+    def __init__(self,df):
+       
+        
+        data_df = pd.DataFrame(df)
         #exmpel på hur man kallar fram en variable som liger i self:
         #DataProccesing("data/ecommerce_sales.csv").amount_of_orders_df
-        self.clean_data_df = clean_data_df
+        self.data_df = data_df
         
     def key_words(self):
-        avo = metrics.average_vaule_order(df=self.clean_data_df)
-        revenue = metrics.total_index(df=self.clean_data_df,index="revenue")
-        unints =  metrics.total_index(df=self.clean_data_df,index="units")
-        orders = metrics.amount_of_orders(df=self.clean_data_df)
+        avo = metrics.average_vaule_order(df=self.data_df)
+        revenue = metrics.total_index(df=self.data_df,index="revenue")
+        unints =  metrics.total_index(df=self.data_df,index="units")
+        orders = metrics.amount_of_orders(df=self.data_df)
     
         
         
