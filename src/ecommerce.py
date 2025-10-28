@@ -22,7 +22,7 @@ class DataProccesing:
     
         
         
-        return print(f"Aov: {avo} kr per order. {"\n"}Antalet ordrar: {orders} st. {"\n"}Inkomst: {revenue} kr. {"\n"}Antal enheter: {unints} st.")
+        return print(f"Aov: {avo} kr per order. \n Antalet ordrar: {orders} st. \n Inkomst: {revenue} kr. \n Antal enheter: {unints} st.")
         
 
 
