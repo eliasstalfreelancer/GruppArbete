@@ -8,4 +8,4 @@ Grupper:
 - Revenue is right skewed so the best summary statistics will be the median and IQR
 - With regards to cities, Stockholm generates the highest revenue (total revenue)
 - By category, electronics generates the highest revenue (total revenue)
-- However, when we look at the mean revenue by city, stockholm is not leading 
+-  it would be interesting to look at average revenue by city, taking into account the number of orders. to have an idea how purchases are made in different towns. this might be helpfull in making recommendations  

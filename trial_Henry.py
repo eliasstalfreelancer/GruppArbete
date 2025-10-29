@@ -55,10 +55,16 @@ plt.title('Total Revenue by City')
 plt.xticks(rotation=45)
 plt.show()
 
-# barplot of city
-plt.figure(figsize=(10, 6))
-plt.bar(data['city'], height=data['city'].value_counts())
+# box plot of total revenue by city and  category
+plt.figure(figsize=(12, 8))
+total_revenue_city_category = data.groupby(['city', 'category'])[
+    'revenue'].sum().reset_index()
+
+
+sns.barplot(
+    data=total_revenue_city_category, x='city', y='revenue', hue='category')
 plt.xlabel('City')
-plt.ylabel('Number of Orders')
-plt.title('Number of Orders by City')
+plt.ylabel('Total Revenue')
+plt.title('Total Revenue by City and Category')
+yticks = range(0, 500001, 20000)
 plt.show()
