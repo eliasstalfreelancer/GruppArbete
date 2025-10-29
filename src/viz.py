@@ -1,6 +1,5 @@
 """läs in funktioner från metrics"""
 
-
 """Skapa olika diagram med värden från metrics
 
 1. Vad säljer vi - vilka kategorier driver mest intäkt
