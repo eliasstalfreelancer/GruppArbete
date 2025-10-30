@@ -6,18 +6,14 @@ import pandas as pd
 
 def plot_orders_weekday(df: pd.DataFrame) -> pd.DataFrame:
     """Skapar diagram för ordrar per veckodag"""
-
     order_per_weekday(df).plot.line(x='day_of_week', y='num_order_per_week', marker='o',color='green')
-
     return plt.title('Number of Orders per Weekday'), plt.show()
-
 
 
 def plot_orders_month(df: pd.DataFrame) -> pd.DataFrame:
     """Skapar diagram för ordrar per månad"""
     order_per_month(df).plot.line(x='month', y='num_orders', marker='o')
     return plt.title('Number of Orders per Month'), plt.show()
-
 
 
 """Skapa olika diagram med värden från metrics

@@ -7,9 +7,7 @@ def order_per_month(df):
     return df.groupby('month')['order_id'].nunique().reset_index(name='num_orders') 
 
 
-
 def order_per_weekday(df: pd.DataFrame) -> pd.DataFrame:
-
     """Räknar unika ordrar per veckodag"""
     week_days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
     return df.groupby(df['day_of_week'])['order_id'].nunique().reset_index(name='num_order_per_week').sort_values(by='day_of_week', key=lambda x: x.map({day: i for i, day in enumerate(week_days)}))
