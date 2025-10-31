@@ -3,7 +3,7 @@ import pandas as pd
 
 """Här samlar vi alla utsräkningar vi behöver till vår klass i ecommerce.py som presenterar nyckeltal"""
 
-import pandas as pd
+
 
 
 def amount_of_orders(df):
@@ -14,6 +14,7 @@ def amount_of_orders(df):
 
 
 def total_index(df,index):
+    #räknar ut summan av valfri cloum
     sum = df[index].sum()
     rounded_sum = sum.round(2)
         
@@ -26,7 +27,7 @@ def average_vaule_order(df):
     rounded_aov = aov.round(2)
     
     return rounded_aov  
-import pandas as pd
+
 
 def order_per_month(df):
     """Räknar unika ordrar per månad"""
@@ -40,15 +41,6 @@ def order_per_weekday(df: pd.DataFrame) -> pd.DataFrame:
 
 
 
-"""Här vill vi smala alla uträkningar som vi ska använda för att sedan skapa diagram i viz.py"""
-
-
-
-import pandas as pd
-from src.io_utils import load_data, clean_data
-
-df = load_data("data/ecommerce_sales.csv")
-df_clean = clean_data(df)
 
 def city_revenue(df: pd.DataFrame) -> pd.DataFrame:
     return (
