@@ -11,7 +11,6 @@
     *Sätta rätt datatyper så vi kan använda kategorierna för olika beräkningar senare
     *Retunera df_clean"""
 
-
 import pandas as pd
 
 def load_data(filepath):
@@ -19,7 +18,8 @@ def load_data(filepath):
 
 def clean_data(df):
     df_clean = df
-    df_clean["date"] = pd.to_datetime(df_clean["date"], errors="coerce")
+    df_clean["date"] = pd.to_datetime(df_clean["date"], dayfirst=False, errors="coerce")
     df_clean["city"] = df_clean["city"].astype("category")
     df_clean["category"] = df_clean["category"].astype("category")
     return df_clean
+

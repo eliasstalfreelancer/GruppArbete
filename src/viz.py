@@ -3,6 +3,7 @@ import matplotlib.pyplot as plt
 import pandas as pd
 from src.metrics import order_per_month, order_per_weekday
 
+"""Skapa olika diagram med värden från metrics
 
 
 import matplotlib.pyplot as plt
