@@ -8,6 +8,15 @@ from src.metrics import order_per_month, order_per_weekday
 import matplotlib.pyplot as plt
 import src.metrics as me 
 
+def distro_of_rev(df):   
+# histogram of revenue
+    plt.figure(figsize=(10, 6))
+    plt.hist(df['revenue'], bins=30, color='salmon', edgecolor='black')
+    plt.xlabel('Revenue')
+    plt.ylabel('Frequency')
+    plt.title('Distribution of Revenue')
+    plt.show()
+
 def plot_city_revenue(df):
     city_revenue_result = me.city_revenue(df)
     city_revenue_result.plot(
