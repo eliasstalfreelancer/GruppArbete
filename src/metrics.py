@@ -33,8 +33,6 @@ def city_revenue(df: pd.DataFrame) -> pd.DataFrame:
         .sort_values(ascending=False)
     )
 
-#city_revenue_result = city_revenue(df_clean)
-#print(city_revenue_result)
 def groupby_category(df):
     """
     Gruperar per categori och räknar: antal, medelvärde och summa för 'revenue' i varje grupp
