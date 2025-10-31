@@ -4,3 +4,4 @@ Grupper:
 * Shara, Alma : Hur ser en typisk order ut? – AOV (Average Order Value) och spridning 
 * Jazdan, Elias : Topp-listor – topp-3 kategorier efter intäkt. 
 
+'Hej det här är bara test branch 
