@@ -10,12 +10,14 @@
 3. När säljer vi - intäkt per månad?
 4. Top 3         - vilka tre kategorier driver mest intäkt"""
 import matplotlib.pyplot as plt
-from metrics import city_revenue_result
+import src.metrics as me 
 
-city_revenue_result.plot(
-    kind='bar', color=['blue', 'orange', 'green', 'red', 'purple'], figsize=(10, 6))
-plt.xlabel('City')
-plt.ylabel('Total Revenue (million)')
-plt.title('Total Revenue by City')
-plt.xticks(rotation=45)
-plt.show()
+def plot_city_revenue(df):
+    city_revenue_result = me.city_revenue(df)
+    city_revenue_result.plot(
+        kind='bar', color=['blue', 'orange', 'green', 'red', 'purple'], figsize=(10, 6))
+    plt.xlabel('City')
+    plt.ylabel('Total Revenue (million)')
+    plt.title('Total Revenue by City')
+    plt.xticks(rotation=45)
+    plt.show()
