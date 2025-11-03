@@ -4,8 +4,50 @@ import pandas as pd
 """Här samlar vi alla utsräkningar vi behöver till vår klass i ecommerce.py som presenterar nyckeltal"""
 
 
-"""Här vill vi smala alla uträkningar som vi ska använda för att sedan skapa diagram i viz.py"""
 
+
+def amount_of_orders(df):
+    
+    amount_of_orders = len(df) 
+
+    return amount_of_orders
+
+
+def total_index(df,index):
+    #räknar ut summan av valfri cloum
+    sum = df[index].sum()
+    rounded_sum = sum.round(2)
+        
+    return rounded_sum
+
+def average_vaule_order(df):
+    revenue = total_index(df,"revenue")
+    orders = amount_of_orders(df)
+    aov = revenue/orders
+    rounded_aov = aov.round(2)
+    
+    return rounded_aov  
+
+
+def order_per_month(df):
+    """Räknar unika ordrar per månad"""
+    return df.groupby('month')['order_id'].nunique().reset_index(name='num_orders') 
+
+
+def order_per_weekday(df: pd.DataFrame) -> pd.DataFrame:
+    """Räknar unika ordrar per veckodag"""
+    week_days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
+    return df.groupby(df['day_of_week'])['order_id'].nunique().reset_index(name='num_order_per_week').sort_values(by='day_of_week', key=lambda x: x.map({day: i for i, day in enumerate(week_days)}))
+
+
+
+
+def city_revenue(df: pd.DataFrame) -> pd.DataFrame:
+    return (
+        df.groupby("city",observed=False)["revenue"]
+        .sum()
+        .sort_values(ascending=False)
+    )
 
 def groupby_category(df):
     """
