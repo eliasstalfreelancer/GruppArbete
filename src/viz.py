@@ -8,8 +8,9 @@ def distro_of_rev(df):
     plt.figure(figsize=(10, 6))
     plt.hist(df['revenue'], bins=30, color='salmon', edgecolor='black')
     plt.xlabel('Revenue')
-    plt.ylabel('Frequency')
+    plt.ylabel('Orders')
     plt.title('Distribution of Revenue')
+    plt.grid(True,axis='y')
     plt.show()
 
 def plot_city_revenue(df):
@@ -20,19 +21,28 @@ def plot_city_revenue(df):
     plt.ylabel('Total Revenue (million)')
     plt.title('Total Revenue by City')
     plt.xticks(rotation=45)
+    plt.grid(True,axis='y')
     plt.show()
 
 def plot_orders_weekday(df: pd.DataFrame) -> pd.DataFrame:
     """Skapar diagram för ordrar per veckodag"""
-    me.order_per_weekday(df).plot.line(x='day_of_week', y='num_order_per_week', marker='o',color='green')
+    me.order_per_weekday(df).plot.line(x='day_of_week', y='num_order_per_week', marker='o',color='green',label = "Number of orders per week" )
     plt.title('Number of Orders per Weekday')
+    plt.xlabel("Day of week")
+    plt.ylabel("Orders")
+    plt.legend()
+    plt.grid(True)
     return plt.show()
 
 
 def plot_orders_month(df: pd.DataFrame) -> pd.DataFrame:
     """Skapar diagram för ordrar per månad"""
-    me.order_per_month(df).plot.line(x='month', y='num_orders', marker='o')
+    me.order_per_month(df).plot.line(x='month', y='num_orders', marker='o',label = "Number of orders per Months")
     plt.title('Number of Orders per Month')
+    plt.xlabel("Months")
+    plt.ylabel("Orders")
+    plt.legend()
+    plt.grid(True)
     return  plt.show()
 
 
