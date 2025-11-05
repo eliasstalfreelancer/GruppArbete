@@ -90,15 +90,13 @@ Detta är själva rapporten. Den läser in data och anropar sedan funktioner fr�
 
 ## Installation 
 
+python version 3.13.7
+
 1. Klona projeket från GitHub:
 
-git clone https://github.com/eliasstalfreelancer/GruppArbete.git
+git clone https://github.com/eliasstalfreelancer/GruppArbete.git .
 
-2. Gå in i projektmappen:
-
-cd GruppArbete
-
-3. Installera nödvändiga paket:
+2. Installera nödvändiga paket:
 
 pip install -r requirements.txt
 
