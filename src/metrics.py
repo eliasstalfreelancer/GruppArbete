@@ -36,8 +36,8 @@ def order_per_month(df: pd.DataFrame) -> pd.DataFrame:
 
 def order_per_weekday(df: pd.DataFrame) -> pd.DataFrame:
     """Räknar unika ordrar per veckodag"""
+    # rad 40 till 41 är taget från Stack Overflow https://stackoverflow.com/questions/53189216/sorting-pandas-dataframe-by-weekdays?
     week_days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
-    # taget in från internet, fixa sen
     return df.groupby(df['day_of_week'])['order_id'].nunique().reset_index(name='num_order_per_week').sort_values(by='day_of_week', key=lambda x: x.map({day: i for i, day in enumerate(week_days)}))
 
 
